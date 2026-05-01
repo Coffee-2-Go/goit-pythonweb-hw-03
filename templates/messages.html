@@ -3,6 +3,7 @@
 {% block content %}
 <div class="container mt-3">
   <main class="m-auto">
+    {% if messages %}
     <ol class="list-group">
       {% for timestamp, entry in messages.items() %}
       <li class="list-group-item">
@@ -14,6 +15,9 @@
       </li>
       {% endfor %}
     </ol>
+    {% else %}
+    <p class="text-muted">No messages, please add</p>
+    {% endif %}
   </main>
 </div>
 {% endblock %}
